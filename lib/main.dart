@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+
 import './views/video_cell.dart';
+import './screens/detail_page.dart';
 
 void main() => runApp(new RealWorldApp());
 
@@ -62,23 +64,11 @@ class RealWorldState extends State<RealWorldApp> {
                           Navigator.push(
                               context,
                               new MaterialPageRoute(
-                                  builder: (context) => new DetailPage()));
+                                  builder: (context) => new DetailPage(video)));
                         },
                       );
                     },
                   )),
-      ),
-    );
-  }
-}
-
-class DetailPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: new AppBar(title: new Text("Detail Page")),
-      body: new Center(
-        child: new Text("Detail Detail Detail"),
       ),
     );
   }
